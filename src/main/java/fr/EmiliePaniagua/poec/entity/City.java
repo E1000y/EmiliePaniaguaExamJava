@@ -34,4 +34,17 @@ public class City implements EntityInterface{
     public Long getId() {
         return null;
     }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "id=" + id +
+                ", department=" + department +
+                ", siren='" + siren + '\'' +
+                ", population=" + population +
+                ", name='" + name + '\'' +
+                ", code='" + code + '\'' +
+                ", postalCodes=" + postalCodes +
+                '}';
+    }
 }

@@ -12,7 +12,7 @@ public class CityRepository extends AbstractRepository<City> {
 
     private static CityRepository instance;
 
-    protected CityRepository() {
+    public CityRepository() {
         super("City");
     }
 
@@ -46,6 +46,7 @@ public class CityRepository extends AbstractRepository<City> {
             city.setCode(rs.getString("code"));
             city.setSiren(rs.getString("siren"));
             city.setPopulation(rs.getInt("population"));
+            city.setDepartment(new Department(rs.getInt("department_id"),null,null));
 
 
 

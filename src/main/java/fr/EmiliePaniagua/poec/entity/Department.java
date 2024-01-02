@@ -20,4 +20,13 @@ public class Department implements EntityInterface {
     public Long getId() {
         return null;
     }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", code='" + code + '\'' +
+                '}';
+    }
 }

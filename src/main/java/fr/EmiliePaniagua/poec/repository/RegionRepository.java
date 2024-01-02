@@ -9,7 +9,7 @@ public class RegionRepository extends AbstractRepository<Region> {
 
     public static RegionRepository instance;
 
-    protected RegionRepository() {
+    public RegionRepository() {
         super("region");
     }
 

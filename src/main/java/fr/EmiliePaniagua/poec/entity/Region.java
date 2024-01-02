@@ -11,16 +11,27 @@ import lombok.Setter;
 @AllArgsConstructor
 
 public class Region implements EntityInterface {
-    private long Id;
+    private long id;
     private String name;
     private String code;
 
 
-
+    public Region (long id){
+        this.id = id;
+    }
 
 
     @Override
     public Long getId() {
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Region{" +
+                "Id=" + id +
+                ", name='" + name + '\'' +
+                ", code='" + code + '\'' +
+                '}';
     }
 }
