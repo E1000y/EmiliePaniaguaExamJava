@@ -1,10 +1,14 @@
 package fr.EmiliePaniagua.poec.repository;
 
+import fr.EmiliePaniagua.poec.entity.City;
+import fr.EmiliePaniagua.poec.entity.Department;
 import fr.EmiliePaniagua.poec.entity.EntityInterface;
+import fr.EmiliePaniagua.poec.entity.Region;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class CityRepository extends AbstractRepository {
+public class CityRepository extends AbstractRepository<City> {
 
     private static CityRepository instance;
 
@@ -19,18 +23,40 @@ public class CityRepository extends AbstractRepository {
         return instance;
     }
 
+
     @Override
-    protected EntityInterface update(EntityInterface object) {
+    protected City update(City object) {
         return null;
     }
 
     @Override
-    protected EntityInterface insert(EntityInterface object) {
+    protected City insert(City object) {
         return null;
     }
 
     @Override
-    protected EntityInterface getObject(ResultSet rs) {
-        return null;
+    protected City getObject(ResultSet rs) {
+
+
+        City city = new City();
+
+        try{
+            city.setId(rs.getLong("id"));
+            city.setName(rs.getString("name"));
+            city.setCode(rs.getString("code"));
+            city.setSiren(rs.getString("siren"));
+            city.setPopulation(rs.getInt("population"));
+
+
+
+
+        }catch(SQLException e){
+            System.out.println("Something went wrong getting City" + e.getMessage());
+        }
+        return city;
     }
+
+
+
 }
+
